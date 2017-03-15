@@ -1,5 +1,8 @@
 
 $("document").ready(function(){
+    //Agrega favicon.ico con logo
+    $('head').append('<link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">');
+    $('head').append('<link rel="icon" href="images/logos/favicon.ico" type="image/x-icon">');
  
     $(".main-logo").attr("href","index.html");
     $(".cover-img").attr("href","index.html");
@@ -19,6 +22,7 @@ $("document").ready(function(){
             $(this).hide();
 
         }if($(this).attr("title") == "Ingresar"){
+
         }                      
     });
 
