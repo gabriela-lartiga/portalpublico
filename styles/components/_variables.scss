@@ -1,0 +1,254 @@
+////////////////////////////////////////
+//////////////////////////////////////// Paths
+////////////////////////////////////////
+$fonts_path: '../fonts';
+$images_path: '../images';
+
+////////////////////////////////////////
+//////////////////////////////////////// Base
+////////////////////////////////////////
+
+   $base_sans_font_family: "Signika", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$base_font_size: 16px !default;
+$base_line_height: 1.6 !default;
+$base_padding: 1em !default; // em for it to react to its context
+$base_transition: all 200ms ease !default;
+$base_box_shadow: 0 0 .5em rgba(0,0,0,.1) !default;
+$base_border_radius: .25rem !default;
+
+////////////////////////////////////////
+//////////////////////////////////////// Typography
+//////////////////////////////////////// 
+$text_sizes: (
+	tiny: 		.75rem,
+	small: 		.875rem,
+	regular: 	1rem,
+	medium: 	1.125rem,
+	big: 		1.25rem,
+	bigger: 	1.5rem,
+	tall: 		1.75rem,
+	taller: 	2rem,
+	huge: 		2.5rem,
+	huger: 		3rem,
+	giant: 		4rem
+);
+
+
+$headings_line_height: 1.2;
+$regular_line_height: $base_line_height;
+
+
+
+////////////////////////////////////////
+//////////////////////////////////////// Colors
+////////////////////////////////////////
+
+$colors_map : (
+	white : #fff,
+	black : #000,
+	grey : (
+		dark 	: #5B5B5F,
+		regular : #9A999E,
+		light 	: #C5C3CB,
+		lighter : #F0F0F0
+	),
+	cyan : (
+		dark 	: #065273,
+		regular : #2AABE2,
+		light 	: #85D2F2,
+		lighter : #C3EAFA
+	),
+	blue : (
+		dark 	: #101551,
+		regular : #2E358F,
+		light 	: #858DF2,
+		lighter : #C3C7FA
+	),
+	purple : (
+		dark 	: #550452,
+		regular : #90288D,
+		light 	: #F285EF,
+		lighter : #FAC3F8
+	),
+	magenta : (
+		dark 	: #730645,
+		regular : #EA0A8B,
+		light 	: #F285C5,
+		lighter : #FAC3E3
+	),
+	red : (
+		dark 	: #731606,
+		regular : #EE4223,
+		light 	: #F29685,
+		lighter : #FACBC3
+	),
+	orange : (
+		dark 	: #733906,
+		regular : #F5821F,
+		light 	: #F2B885,
+		lighter : #FADDC3
+	),
+	yellow : (
+		dark 	: #735906,
+		regular : #E6B820,
+		light 	: #F2D985,
+		lighter : #FAEDC3
+	),
+	green : (
+		dark 	: #407306,
+		regular : #7FB541,
+		light 	: #E0FAC3,
+		lighter : #BFF285
+	),
+	forest-green : (
+		dark 	: #056935,
+		regular : #009849,
+		light 	: #85F2BA,
+		lighter : #C3FADD
+	),
+	teal : (
+		dark 	: #06736B,
+		regular : #00A89C,
+		light 	: #85F2EB,
+		lighter : #C3FAF6
+	)
+);
+
+$gradients_map : (
+	buttons : (
+		regular : linear-gradient(
+			to right,
+			map-get(map-get($colors_map, purple), regular), 
+			map-get(map-get($colors_map, blue), regular)
+		),
+		special : linear-gradient(
+			to right,
+			map-get(map-get($colors_map, cyan), regular),
+			map-get(map-get($colors_map, blue), regular)
+		)
+	),
+	complete : (
+		smooth : linear-gradient(
+			to right,
+			map-get(map-get($colors_map, cyan), regular) 0%,
+			map-get(map-get($colors_map, blue), regular) 11%,
+			map-get(map-get($colors_map, purple), regular) 22%,
+			map-get(map-get($colors_map, magenta), regular) 33%,
+			map-get(map-get($colors_map, red), regular) 44%,
+			map-get(map-get($colors_map, orange), regular) 55%,
+			map-get(map-get($colors_map, yellow), regular) 66%,
+			map-get(map-get($colors_map, green), regular) 77%,
+			map-get(map-get($colors_map, forest-green), regular) 88%,
+			map-get(map-get($colors_map, teal), regular) 100%
+		),
+		stepped : linear-gradient(
+			to right,
+			map-get(map-get($colors_map, cyan), regular) 0%,
+			map-get(map-get($colors_map, cyan), regular) 10%,
+			map-get(map-get($colors_map, blue), regular) 10%,
+			map-get(map-get($colors_map, blue), regular) 20%,
+			map-get(map-get($colors_map, purple), regular) 20%,
+			map-get(map-get($colors_map, purple), regular) 30%,
+			map-get(map-get($colors_map, magenta), regular) 30%,
+			map-get(map-get($colors_map, magenta), regular) 40%,
+			map-get(map-get($colors_map, red), regular) 40%,
+			map-get(map-get($colors_map, red), regular) 50%,
+			map-get(map-get($colors_map, orange), regular) 50%,
+			map-get(map-get($colors_map, orange), regular) 60%,
+			map-get(map-get($colors_map, yellow), regular) 60%,
+			map-get(map-get($colors_map, yellow), regular) 70%,
+			map-get(map-get($colors_map, green), regular) 70%,
+			map-get(map-get($colors_map, green), regular) 80%,
+			map-get(map-get($colors_map, forest-green), regular) 80%,
+			map-get(map-get($colors_map, forest-green), regular) 90%,
+			map-get(map-get($colors_map, teal), regular) 90%,
+			map-get(map-get($colors_map, teal), regular) 100%
+		)
+	),
+	regular : (
+		to-teal : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, teal), regular)
+		),
+		to-forest-green : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, forest-green), regular)
+		),
+		to-green : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, green), regular)
+		),
+		to-yellow : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, yellow), regular)
+		),
+		to-orange : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, orange), regular)
+		),
+		to-red : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, red), regular)
+		),
+		to-purple : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, purple), regular)
+		),
+		to-blue : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, blue), regular)
+		),
+		to-cyan : linear-gradient(
+			30deg,
+			map-get(map-get($colors_map, magenta), regular), 
+			map-get(map-get($colors_map, cyan), regular)
+		)
+	)
+);
+
+////////////////////////////////////////
+//////////////////////////////////////// Breakpoints & sizes
+////////////////////////////////////////
+
+$extra_small: 	20em !default;  // ~320px
+$small: 		40em !default;  // ~640px
+$medium: 		50em !default;  // ~800px
+$large: 		64em !default;  // ~1024px
+$extra_large: 	80em !default;  // ~1280px
+$huge: 			90em !default;  // ~1440px
+
+$medias_map: (
+	extra-small: $extra_small,
+	small: $small,
+	medium: $medium,
+	large: $large,
+	extra-large: $extra_large,
+	huge: $huge
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

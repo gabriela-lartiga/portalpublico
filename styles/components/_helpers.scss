@@ -1,0 +1,91 @@
+//////////////////////////////////
+////////////////////////////////// Animations
+//////////////////////////////////
+@keyframes image_scale {
+	0% { transform: rotateZ(0deg) scale(1); }
+	100% { transform: rotateZ(5deg) scale(1.4); }
+}
+
+//////////////////////////////////
+////////////////////////////////// Blocks
+//////////////////////////////////
+
+.absolute-cover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.elastic-img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.cover-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.island {
+	display: block;
+	margin: 1rem 0;
+}
+
+
+
+//////////////////////////////////
+////////////////////////////////// Typoraphy
+//////////////////////////////////
+
+// font styles
+.font-line-through { text-decoration: line-through; }
+.font-bold { font-weight: bold; }
+.font-italic { font-style: italic; }
+
+// font alignments
+.font-centered { text-align: center; }
+.font-lefted { text-align: left; }
+.font-righted { text-align: right; }
+
+
+//////////////////////////////////
+////////////////////////////////// Backgrounds and gradients
+//////////////////////////////////
+@each $type, $shades in $colors_map {
+	@if ( type-of($shades) == map ) {
+		@each $shade, $code in $shades {
+			.bg-#{$type}-#{$shade} { background: $code; }
+		}
+	}
+	@else {
+		.bg-#{$type} { background: $shades; }
+	}
+}
+
+@each $type, $map in $gradients_map {
+	@each $name, $code in $map {
+		.gradient-#{$type}-#{$name} { background-image: $code; }
+	}
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Media helpers
+//////////////////////////////////
+@each $media_name, $media_size in $medias_map {
+	@include media( #{$media_name}-up ){
+		.hide-on-#{$media_name}-up { display: none !important; }
+	}
+	@include media( #{$media_name}-down ){
+		.hide-on-#{$media_name}-down { display: none !important; }
+	}
+}
+
+
+

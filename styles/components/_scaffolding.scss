@@ -1,0 +1,84 @@
+//////////////////////////////////
+////////////////////////////////// Base
+//////////////////////////////////
+html {
+    font-family: $base_sans_font_family;
+    font-size: $base_font_size;
+    line-height: $base_line_height;
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Form elements
+//////////////////////////////////
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+//////////////////////////////////
+////////////////////////////////// Typography
+//////////////////////////////////
+
+a {
+    color: get-color(purple, regular);
+    &:hover {
+        text-decoration: none;
+        color: get-color(purple, dark);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    margin: 1rem 0;
+    font-weight: lighter;
+    line-height: $headings_line_height;
+}
+
+h1 { font-size: map-get($text_sizes, huge); }
+h2 { font-size: map-get($text_sizes, taller); }
+h3 { font-size: map-get($text_sizes, tall); }
+h4 { font-size: map-get($text_sizes, bigger); }
+h5 { font-size: map-get($text_sizes, big); }
+h6 { font-size: map-get($text_sizes, medium); }
+
+p {
+    display: block;
+    margin: 1em 0 0 0;
+    &:first-child { margin-top: 0; }
+}
+
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+    li { margin: .5em 0; }
+
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
+    &:only-child { margin: 0; }
+}
+
+code {
+    padding: .125rem .25rem;
+    font-size: 90%;
+    border-radius: $base_border_radius; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
