@@ -19,11 +19,10 @@ $("document").ready(function(){
             $(this).hide();
 
         }if($(this).attr("title") == "Ingresar"){
-
         }                      
     });
 
-
+// Elimina child drop down Acerca de adapt, y Elimina Ayuda y contacto
     $(".secondary-nav__list").children().each(function(){
         if($(this).attr("class") == "secondary-nav__item secondary-nav__item--has-children"){
             $(this).attr("class","secondary-nav__item secondary-nav__item");
