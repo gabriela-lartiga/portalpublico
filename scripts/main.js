@@ -52,7 +52,11 @@ $("document").ready(function(){
 
 
     //FOOTER
-
+    $(".island").children().each(function(){
+        if($(this).attr("title") == "Contáctanos"){
+            $(this).attr("href","contacto.html");
+        }
+    });
     $(".footer-nav-holder").children().each(function(ii,vv){
         if(ii == 0){
             $(this).children().each(function(ind,val){
