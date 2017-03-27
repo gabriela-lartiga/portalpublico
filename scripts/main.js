@@ -1,5 +1,21 @@
 
+var abreModulo = "";
 $("document").ready(function(){
+    abreModulo=function(){
+       var dondeEstoy = window.location.href;
+            $.fancybox({                        
+                'type'      : 'iframe',
+                'href'   : "modalContacto.html?url="+dondeEstoy,
+                'autoSize'  : true,
+                'closeBtn'  : true,     
+                afterClose  : function (n) {
+                    //console.log(n);
+                },
+                /*  helpers : {
+                    overlay : {closeClick: false}
+                }*/
+            }); 
+    }
     //Agrega favicon.ico con logo
     $('head').append('<link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">');
     $('head').append('<link rel="icon" href="images/logos/favicon.ico" type="image/x-icon">');
@@ -47,14 +63,15 @@ $("document").ready(function(){
                 $(v).remove();
             }
         });
-    }); 
-
-
-
+    });
+     
+    
     //FOOTER
     $(".island").children().each(function(){
         if($(this).attr("title") == "Contáctanos"){
-            $(this).attr("href","contacto.html");
+           // $(this).attr("href","contacto.html");
+           $(this).attr("onClick","abreModulo()");
+            
         }
     });
     $(".footer-nav-holder").children().each(function(ii,vv){

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contacto Adaptativamente</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="scripts/libs/jquery-1.7.2.js"></script>   
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery-confirm.css">
+  <style>
+      .jconfirm-scrollpane{
+          overflow:hidden;
+      }
+  </style>    
+</head>
+<body style="overflow:hidden;">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <h1>Contactate con nosotros</h1>
+
+                    <p class="lead">Envianos tus consultas, dudas o sugerencias.</p>
+
+
+                    <form id="contact-form" role="form" novalidate="true">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <!--div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Nombre *</label>
+                                        <input id="form_name" type="text" name="formInp" class="form-control" placeholder="Nombre *" required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Apellido *</label>
+                                        <input id="form_lastname" type="text" name="formInp" class="form-control" placeholder="Apellidos *" required="required">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email *</label>
+                                        <input id="form_email" type="email" name="formInp" class="form-control" placeholder="Email *" required="required" >
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_motivo">Motivo *</label>
+                                            <select class="form-control" id="slcMotivo">
+                                                <option value="">Selecciona</option>
+                                                <option value="Consulta">Consulta</option>
+                                                <option value="Error">Error</option>
+                                                <option value="Observacion">Observación</option>
+                                            </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Mensaje *</label>
+                                        <textarea id="form_message" name="formInp" class="form-control" placeholder="Escribe tu mensaje..." rows="4" required="required" ></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <div class="col-sm-4">
+                                        <input id="btnEnviar" class="btn btn-success btn-send disabled" value="Enviar">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="text-muted" style="color:red" id="txtAdvertencia"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                            </div>      
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                            </div>                                                                                                           
+                        </div>
+
+                    </form>
+
+                </div><!-- /.8 -->
+
+            </div> <!-- /.row-->
+
+        </div> <!-- /.container-->
+<script src="scripts/jquery-confirm.js"></script>
+</body>
+<script>
+    function getURLParameter(sPrmParametro) 
+    {
+        return decodeURIComponent((new RegExp('[?|&]' + sPrmParametro + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+    }
+    function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length,c.length);
+			}
+		}
+		return "";
+	}
+    var url = "";
+    $("document").ready(function(){
+        url = getURLParameter("url");
+        $("#btnEnviar").click(function(){
+            if($("#btnEnviar").hasClass("disabled")){
+                console.log(window.location.href );
+                return false;
+            }else{
+                if($("#form_email").val() != "" && $("#form_message").val() != "" && $("#slcMotivo option:selected").val() != ""){                                 
+                     $.ajax({
+                        url: urlPeticiones+"/roles/",		
+                        type: 'GET',
+                        headers:{"Authorization": getCookie("adaptativamente")},	
+                        dataType : "json",				
+                        success : function(roles) {
+                            var json = JSON.stringify({ "idusuario" : roles[0].IDUSUARIO , "url" : url , "email" : $("#form_email").val() , "asunto": $("#slcMotivo option:selected").val(), "mensaje": $("#form_message").val()});//armar json                            
+                            $.confirm({
+                                title: 'Confirmar.',
+                                content: '¿Esta seguro de enviar el mensaje?',
+                                buttons: {
+                                    confirmar: function () {
+                                        /*$.ajax({
+                                            url: urlPeticiones+"/asignartareaejercicio",		
+                                            data :JSON.parse(json),						
+                                            type: 'POST',
+                                            headers:{"Authorization": getCookie("adaptativamente")},	
+                                            dataType : "json",				
+                                            success : function(result) {
+                                                console.log(result);
+                                                $.alert({
+                                                    title: 'Mensaje.',
+                                                    content: 'Se enviado correctamente.',
+                                                });
+                                            }
+                                        }).fail(function(e){
+                                            console.log(e);
+                                        });*/
+                                            $.alert({
+                                                    title: 'Mensaje.',
+                                                    content: 'Se enviado correctamente.',
+                                            });                                        
+                                    },
+                                    cancelar: function () {
+                                    }
+                                }
+                            });
+                        }
+                    }).fail(function(e){
+                        console.log(e);
+                    });                            
+
+                }
+            }
+            
+        });
+    });
+    function disabledButton(){
+        $("#btnEnviar").removeAttr("class");
+        $("#btnEnviar").attr("class","btn btn-success btn-send disabled");  
+    }
+
+/*  VALIDACION FORMULARIO   */
+    $("input[name='formInp']").keyup(function(){
+        $("input[name='formInp']").each(function(){            
+        if($(this).val() == ""){
+            disabledButton();              
+        }    
+        });
+        if($("#slcMotivo option:selected").val() != ""){
+            $("#btnEnviar").removeAttr("class");
+            $("#btnEnviar").attr("class","btn btn-success btn-send");
+        }else{
+            disabledButton();
+        }     
+        $("#txtAdvertencia").text(""); 
+    });
+
+    $("textarea[name='formInp']").keyup(function(){
+        $("textarea[name='formInp']").each(function(){            
+        if($(this).val() == ""){
+            disabledButton();           
+        }    
+        });
+        if($("#slcMotivo option:selected").val() != ""){
+            $("#btnEnviar").removeAttr("class");
+            $("#btnEnviar").attr("class","btn btn-success btn-send");
+        }else{
+            disabledButton();
+        }    
+        $("#txtAdvertencia").text("");  
+    });    
+
+    $("#slcMotivo").change(function(){
+        $("input[name='formInp']").each(function(){            
+        if($(this).val() == ""){
+            disabledButton();           
+            return false;
+        }    
+        });  
+        if($("textarea[name='formInp']").val() == ""){
+            disabledButton();
+            return false;      
+        }
+        if($("#slcMotivo option:selected").val() == ""){
+            disabledButton();  
+        }else{
+            $("#btnEnviar").removeAttr("class");
+            $("#btnEnviar").attr("class","btn btn-success btn-send");
+        }
+    });    
+
+    $("input[name='formInp']").blur(function(){
+        $("input[name='formInp']").each(function(){  
+            if(this.id == "form_email"){
+                var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+                if(!pattern.test($(this).val())){
+                    $("#txtAdvertencia").text("El email debe ser valido");
+                    disabledButton();  
+                    $(this).focus();
+                    return false;
+                }
+            }
+
+            if($(this).val() == "" || $(this).val().length <= 2){
+                $("#txtAdvertencia").text("El valor no puede ir vacio y debe ser valido");
+                disabledButton();
+                $(this).focus();
+                return false;
+            } 
+            $("#txtAdvertencia").text("");   
+        });
+    });
+    $("textarea[name='formInp']").blur(function(){
+        $("input[name='formInp']").each(function(){            
+            if($(this).val() == "" || $(this).val().length <= 2){
+                $("#txtAdvertencia").text("El valor no puede ir vacio y debe ser valido");
+                $(this).focus();
+                disabledButton();  
+                return false;
+            }  
+            $("#txtAdvertencia").text("");   
+        });
+        if($("textarea[name='formInp']").val() == "" ||  $("textarea[name='formInp']").val().length <= 10){
+            $("#txtAdvertencia").text("El mensaje no puede ir vacio y debe ser mayor a 10 caracteres");
+            disabledButton();  
+            $("textarea[name='formInp']").focus();
+        }
+    });
+/*  FIN VALIDACION FORMULARIO   */
+</script>
+</html>
