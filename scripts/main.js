@@ -1,6 +1,5 @@
 
 var abreModulo = "";
-$("document").ready(function(){
     abreModulo=function(){
        var dondeEstoy = window.location.href;
             $.fancybox({                        
@@ -96,4 +95,52 @@ $("document").ready(function(){
     });
    
 
-});
+
+    /*-----------------------------------------Funciones de bloques-----------------------------------------*/
+
+            /*document.addEventListener('contextmenu', event => event.preventDefault()); //Prevenir click derecho
+
+            $(document).keydown(function(event){ // previene f12
+                if(event.keyCode==123){
+                    return false;
+                }
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==73){        
+                    return false;  //previene ctrl+shift+i
+                }
+                else if(event.ctrlKey && event.keyCode==85){        
+                    return false;  //previene control u
+                }
+                else if(event.ctrlKey && event.keyCode==67){        
+                    return false;  //previene control c
+                }
+                else if(event.ctrlKey && event.keyCode==74){        
+                    return false;  //previene control j
+                }
+                else if(event.shiftKey && event.keyCode==123){        
+                    return false;  //previene shift+f12 (firefox)
+                }
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==81){        
+                    return false;  //previene contro+shift+q (firefox)
+                }
+                else if(event.shiftKey && event.keyCode==118){        
+                    return false;  //previene shift+f7 (firefox)
+                }   
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==75){        
+                    return false;  //previene ctrl+shift+k (firefox)
+                }   
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==74){        
+                    return false;  //previene ctrl+shift+j (firefox)
+                }   
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==83){        
+                    return false;  //previene ctrl+shift+s (firefox)
+                }   
+                else if(event.ctrlKey && event.shiftKey && event.keyCode==67){        
+                    return false;  //previene ctrl+shift+c (firefox)
+                }       
+                else if(event.keyCode==27){        
+                    return false;  //previene escape(Opera)
+                }                                   
+        
+            });*/
+
+    /*-----------------------------------------Fin funciones de bloqueos-----------------------------------------*/

@@ -122,74 +122,59 @@
 <script src="scripts/jquery-confirm.js"></script>
 </body>
 <script>
-    function getURLParameter(sPrmParametro) 
-    {
-        return decodeURIComponent((new RegExp('[?|&]' + sPrmParametro + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-    }
-    function getCookie(cname) {
-		var name = cname + "=";
-		var ca = document.cookie.split(';');
-		for(var i = 0; i <ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length,c.length);
-			}
-		}
-		return "";
-	}
     var url = "";
     $("document").ready(function(){
-        url = getURLParameter("url");
         $("#btnEnviar").click(function(){
             if($("#btnEnviar").hasClass("disabled")){
                 console.log(window.location.href );
                 return false;
             }else{
                 if($("#form_email").val() != "" && $("#form_message").val() != "" && $("#slcMotivo option:selected").val() != ""){                                 
-                     $.ajax({
-                        url: urlPeticiones+"/roles/",		
-                        type: 'GET',
-                        headers:{"Authorization": getCookie("adaptativamente")},	
-                        dataType : "json",				
-                        success : function(roles) {
-                            var json = JSON.stringify({ "idusuario" : roles[0].IDUSUARIO , "url" : url , "email" : $("#form_email").val() , "asunto": $("#slcMotivo option:selected").val(), "mensaje": $("#form_message").val()});//armar json                            
+                            var json = JSON.stringify({ "idusuario" : null , "url" : "sitiopublico" , "email" : $("#form_email").val() , "asunto": $("#slcMotivo option:selected").val(), "mensaje": $("#form_message").val()});//armar json                            
                             $.confirm({
                                 title: 'Confirmar.',
                                 content: '¿Esta seguro de enviar el mensaje?',
                                 buttons: {
                                     confirmar: function () {
-                                        /*$.ajax({
-                                            url: urlPeticiones+"/asignartareaejercicio",		
+                                        $.ajax({
+                                            url: "http://servicios.adaptativamente.cl/ayuda",		
                                             data :JSON.parse(json),						
                                             type: 'POST',
-                                            headers:{"Authorization": getCookie("adaptativamente")},	
                                             dataType : "json",				
                                             success : function(result) {
                                                 console.log(result);
                                                 $.alert({
                                                     title: 'Mensaje.',
                                                     content: 'Se enviado correctamente.',
+                                                    onClose: function () {
+                                                        parent.$.fancybox.close();
+                                                    },
                                                 });
                                             }
                                         }).fail(function(e){
-                                            console.log(e);
-                                        });*/
-                                            $.alert({
+                                            if(e.responseText=="ok"){$.alert({
                                                     title: 'Mensaje.',
                                                     content: 'Se enviado correctamente.',
-                                            });                                        
+                                                    onClose: function () {
+                                                        parent.$.fancybox.close();
+                                                    },
+                                            });} else{
+                                                $.alert({
+                                                    title: 'Mensaje.',
+                                                    content: 'No se ha enviado, intentelo más tarde.',
+                                                    onClose: function () {
+                                                        parent.$.fancybox.close();
+                                                    },
+                                            });
+                                            }
+
+                                        });
+                                                                                    
                                     },
                                     cancelar: function () {
                                     }
                                 }
                             });
-                        }
-                    }).fail(function(e){
-                        console.log(e);
-                    });                            
 
                 }
             }

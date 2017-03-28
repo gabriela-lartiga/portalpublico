@@ -3755,8 +3755,8 @@ body.nav-deployed {
     top: 0;
     left: 0;
     opacity: 0;
-    -webkit-animation: b 30s infinite alternate linear;
-    animation: b 30s infinite alternate linear
+    /*-webkit-animation: b 5s infinite alternate linear;
+    animation: b 5s infinite alternate linear*/
 }
 .content-header__image img.current {
     opacity: 1
