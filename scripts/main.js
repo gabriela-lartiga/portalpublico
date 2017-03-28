@@ -1,5 +1,9 @@
 
 var abreModulo = "";
+    $("body").hide();
+    $("document").ready(function(){
+        $("body").show();
+    });
     abreModulo=function(){
        var dondeEstoy = window.location.href;
             $.fancybox({                        
