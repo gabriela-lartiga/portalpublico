@@ -15,6 +15,13 @@ var abreModulo = "";
                 }*/
             }); 
     }
+      $("document").ready(function(){
+        $.when( cualquiera() ).done(function () {
+            $("body").show();
+        });
+        
+    });
+    function cualquiera(){
     //Agrega favicon.ico con logo
     $('head').append('<link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">');
     $('head').append('<link rel="icon" href="images/logos/favicon.ico" type="image/x-icon">');
@@ -93,7 +100,7 @@ var abreModulo = "";
             });         
         } 
     });
-   
+   }
 
 
     /*-----------------------------------------Funciones de bloques-----------------------------------------*/
