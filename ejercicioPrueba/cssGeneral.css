@@ -1,0 +1,234 @@
+.inpNumerico {
+	font-size:16px; 
+	color:#F58220; 
+	padding:7px; 
+	border-width:1px; 
+	border-radius:7px; 
+	border-style:solid; 
+	box-shadow: 0px 2px 7px 1px rgba(42,42,42,.75); 
+	border-color:#F58220; 
+}
+
+.inpAlphanum {
+	font-size:16px; 
+	color:#F58220; 
+	padding:7px; 
+	border-width:1px; 
+	border-radius:7px; 
+	border-style:solid; 
+	box-shadow: 0px 2px 7px 1px rgba(42,42,42,.75); 
+	border-color:#F58220; 
+}
+
+.inpOpcion {
+	font-size:16px; 
+	color:#F58220; 
+	padding:7px; 
+	border-width:1px; 
+	border-radius:7px; 
+	border-style:solid; 
+	box-shadow: 0px 2px 7px 1px rgba(42,42,42,.75); 
+	border-color:#F58220; 
+	width:150px;
+}
+
+.tablaNormal { 
+	color:#F58220; 
+	border-radius:20px; 
+	border-style:solid; 
+	border-color:#F58220; 
+	overflow:hidden;
+	border-collapse:separate;
+	box-shadow: 0px 2px 7px 1px rgba(42,42,42,.75); 
+}
+
+.tablaNormal   td:not(:last-child)  {
+	border-left: 1px solid #F58220; 
+	border-right: 1px solid #F58220; 
+	border-bottom: 1px solid #F58220;
+}
+
+.tablaNormal   td{
+ 	font-size:150%;
+}
+
+#tblSecOrd p{
+	color: #F58220;
+    font-family: "Larke Neue Thin";
+	src: url('./fontEjercicios/LarkeNeueThin.ttf');	
+}
+
+h1, h2, h3, h4, h5, h6 , font{
+	font-size:200%;
+	color: #F58220;
+    font-family: "Larke Neue Thin";
+	src: url('./fontEjercicios/LarkeNeueThin.ttf');
+}	
+/*#div1{
+		font-size:90%;
+}*/
+div{
+	color: #F58220;
+    font-family: "Larke Neue Thin";
+	src: url('./fontEjercicios/LarkeNeueThin.ttf');		
+}
+
+label{
+	font-size:150%;
+	color: #F58220;
+    font-family: "Larke Neue Thin";
+	src: url('./fontEjercicios/LarkeNeueThin.ttf');	
+}
+/*
+.grupoRdoConImagen {
+  vertical-align: middle;	
+	
+}*/
+.tblImagenes {
+	display:inline;
+	vertical-align:text-tops;
+	
+}
+
+/* COMMON RADIO AND CHECKBOX STYLES  */
+
+input[type=radio],
+input[type=checkbox]{
+  /* hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+input[type=radio] + label,
+input[type=checkbox] + label{
+  cursor:pointer;
+}
+#rdoButtonsDiv{
+  margin-top: -13px;	
+}
+input[type=radio] + label:before,
+input[type=checkbox] + label:before{
+  height:20px;
+  margin-right: 4px;
+  margin-top: 3px;
+  content: "   ";
+  display:inline-block;
+  vertical-align: text-top;
+  transition: 0.3s;
+  border:1px solid #ccc;
+  border-radius:10px;
+  box-shadow: inset 0 -3px 6px #e4e4e4;
+  transition: 0.3s;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+/* DEFAULT */
+input[type=radio] + label:before{
+  border-radius:50%;
+  width:20px;
+  border:solid;
+  border-color:#F58220;
+}
+input[type=checkbox] + label:before{
+  border-radius:2px;
+  width:26px;
+}
+/* CHECKED */
+input[type=radio]:checked + label:before{
+  box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 6px gold;
+}
+input[type=checkbox]:checked + label:before{
+  box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 6px gold;
+}
+
+.divGeneralFeed {
+	width:100%;
+	height:25%;
+	position:absolute;
+}
+
+.div1Feed {
+	position:absolute;
+	top:25%;
+	left:6%;
+}
+
+.bubble {
+	position: absolute;
+	width: 630px;
+	height: 100%;
+	padding: 0px;
+	background: #FFFFFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-left:25%;
+	z-index:9999;
+	box-shadow: 6px 6px 13px 1px rgba(42,42,42,.75); 
+	text-align: center;
+}
+
+.feedFlecha{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 17px 25px 17px 0;
+	border-color: transparent #FFFFFF;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -25px;
+	top: 58px;
+}
+
+.feedFlechaAbajo{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 15px 0;
+	border-color: #FFFFFF transparent;
+	display: block;width: 0;
+	z-index: 1;
+	bottom: -15px;
+	left: 110px;
+}
+
+.spanFeedBack{
+	position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);	
+	font-family: "Larke Neue Thin";
+	src: url('./fontEjercicios/LarkeNeueThin.ttf');
+	color:black;
+	font-size:150%;
+	height:100%;
+	width:100%;
+	align:center;
+	
+}
+.btnFeedBackCerrar{
+	position: absolute;
+    top: -5px;
+    right: 0;
+	border-radius:30px;
+	border:none;
+	background-color:transparent;
+	width:7%;
+	
+}
+.imgFeed{
+	z-index:9999;
+	width: 213px;
+    height: 190px;
+    margin-top: -20px;
+
+}
+
+.div1Feed{
+	z-index:9999;
+}
+#tblFeedSecOrd{ /*Tablas de glosa Secuencias ordenables*/
+	font-size:50%;
+	margin-top:-15px;
+}

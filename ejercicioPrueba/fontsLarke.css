@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Larke Neue";
+  src: url('./LarkeNeueRegular.ttf');
+}
+@font-face {
+  font-family: "Larke Neue Thin";
+  src: url('./LarkeNeueThin.ttf');
+}
+@font-face {
+  font-family: "Larke Neue Bold";
+  src: url('./LarkeNeueBold.ttf');
+}

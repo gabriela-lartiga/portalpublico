@@ -1,0 +1,106 @@
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='cssGeneral.css'>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='fontsLarke.css'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script>
+    $(document).ready(function() {
+        $('div').removeAttr('onclick');
+        $('table').removeAttr('onclick');
+        $('#imagenBotonRespuesta').removeAttr('onclick');
+        $('#imagenBotonRespuesta').attr('onclick', 'responder();enviar();');
+    });
+</script>
+<div id="divCreacionHtml" style=" position: relative; width:980px;height:551px;border-style: groove; top: 5px; left: 10px; float: left;z-index:9;background-color:#ECECEC" template="4">
+    <div class="bordeDiv" onclick="selectDiv(this);" id="div1" style="width:100%;height:20%;">
+        <div class="divGeneralFeed" id="divGeneralFeed" style="display:none;" posicion="abajo">
+            <div class="div1Feed"><img class="imgFeed" ></div>
+            <div class="bubble" id="bubble"><span class="spanFeedBack" id="spanFeedBack"></span>
+                <button type="button" class="btnFeedBackCerrar" onclick="cerrarFeed();"><span class="glyphicon glyphicon-remove-circle" style="font-size:xx-large;" aria-hidden="true"></span></button>
+                <div class="feedFlecha" id="feedFlecha"></div>
+            </div>
+        </div>
+        <div class="" style="width: auto; margin: 4px; min-height: 80px; overflow: hidden; font-size: 200%; z-index: 99; display: inline; position: relative; left: 15px; top: 0px;" id="txt2" name="txt2" onclick="selecTexto(this);">
+            <div style="text-align: left;">En el número 9 <u>8</u>61, la cantidad que representa el dígito subrayado es:</div>
+        </div>
+    </div>
+    <div class="bordeDiv bordeDivMarcado" onclick="selectDiv(this);" id="div2" style="width:100%;height:35%;">
+        <div onclick="selecRdos(this);" id="rdoButtonsDiv1" style="display: inline; width: auto; position: relative; left: 15px; top: 15px;">
+            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ocho" value="ocho">
+            <label class="labelGrupoRdo" for="ocho" style="margin-left:3px;">Ocho</label>
+            <br>
+            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ochenta" value="ochenta">
+            <label class="labelGrupoRdo" for="ochenta" style="margin-left:3px;">Ochenta</label>
+            <br>
+            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ochocientos" value="ochocientos">
+            <label class="labelGrupoRdo" for="ochocientos" style="margin-left:3px;">Ochocientos</label>
+            <br>
+            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ocho  mil" value="ocho  mil">
+            <label class="labelGrupoRdo" for="ocho  mil" style="margin-left:3px;">Ocho mil</label>
+            <br>
+        </div>
+    </div>
+    <div class="bordeDiv" onclick="selectDiv(this);" id="div3" style="width:100%;height:35%;"></div>
+    <div style="position: absolute;right: 0;bottom: 0;left: 0;padding: 1%;background-color: #F9EDC7;text-align: center;z-index:9999;"><img align="right" id="imagenBotonRespuesta" src="https://desarrolloadaptatin.blob.core.windows.net/iconosimg/botones/Numeracion_Terminar" onclick="responder();envio();movButton(this);" style="cursor:pointer;z-index:999;"></div>
+</div>
+<script>
+    var glosa = "El número 9 861 está subrayado en  8, que se ubica en la posición de las centenas, entonces su valor posicional es  800. Por lo tanto, la cantidad que representa es ochocientos.";  
+    var respGeneral = 0;
+    var rspMalas = 0;
+    var rspSinFeedBack = 0;
+    var datos = [];
+    var RespNeg = 0;
+    var fecha = new Date();
+    var fechaEntrada = fecha.toLocaleTimeString();
+    var ieGeneral = 1;
+    var nivelF = "";
+    var ejeF = "";
+    var oaF = "";
+    var errFre = "";
+    var idEjercicio = 040101010200006;
+
+    function responder() {
+        if ($("input[name=grupoRdo1]:checked").val() == "ochocientos") {
+            respGeneral = 1;
+            RespNeg = 0;
+        } else {
+            RespNeg = 1;
+        }
+        if (RespNeg != 0) {
+            rspMalas++;
+            if ($("input[name=grupoRdo1]:checked").val() == "ocho") {
+                $("#divGeneralFeed").show();
+                errFre = "0401010102";
+                $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
+                rspSinFeedBack = 1;
+                return false;
+            }
+            if ($("input[name=grupoRdo1]:checked").val() == "ochenta") {
+                $("#divGeneralFeed").show();
+                errFre = "0401010102";
+                $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
+                rspSinFeedBack = 1;
+                return false;
+            }
+            if ($("input[name=grupoRdo1]:checked").val() == "ocho  mil") {
+                $("#divGeneralFeed").show();
+                errFre = "0401010102";
+                $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
+                rspSinFeedBack = 1;
+                return false;
+            }
+            if (rspSinFeedBack == 0) {
+                $("#divGeneralFeed").show();
+                errFre = "0";
+                $("#spanFeedBack").text("¡Cuidado! Algo anda mal.");
+            }
+        } else {
+            $("#divGeneralFeed").show();
+            $("#spanFeedBack").text("Respuesta Correcta");
+        }
+        respGeneral = 0;
+        RespNeg = 0;
+        rspSinFeedBack = 0;
+    }
+</script>
+<script src='jsEjerciciosPrueba.js'></script>
