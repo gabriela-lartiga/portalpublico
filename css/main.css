@@ -70,6 +70,7 @@ template {
 }
 a {
     background-color: transparent;
+    font-size: 1.1em;
     -webkit-text-decoration-skip: objects
 }
 a:active,
@@ -294,7 +295,7 @@ textarea {
     h3,
     p {
         orphans: 3;
-        widows: 3
+        widows: 3;
     }
     h2,
     h3 {
@@ -352,7 +353,8 @@ h6 {
 }
 p {
     display: block;
-    margin: 1em 0 0
+    margin: 1em 0 0;
+    font-size:1.1rem;
 }
 p:first-child {
     margin-top: 0
@@ -364,7 +366,8 @@ ul {
 }
 ol li,
 ul li {
-    margin: .5em 0
+    margin: .5em 0;
+    font-size: 1.1em;
 }
 ol:first-child,
 ul:first-child {
@@ -3532,7 +3535,7 @@ body.nav-deployed {
     display: inline-block;
     max-width: 100%;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
