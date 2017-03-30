@@ -425,6 +425,7 @@
 	</div>
 </div>
 	<input type="hidden" id="varHidden" val="" onChange="cambio()">
+	<input type="hidden" id="flagCerrarCorrecta" val="" onChange="cerrarCorrecta()">
 	</main>
 
 	<footer class="main-footer" >
@@ -490,7 +491,10 @@
 	<script>
 		function cambio(){
 			var json = JSON.parse($("#varHidden").val());
-			if(json.numeroIntento == 2){
+			if(json.text == "Respuesta Correcta"){
+				return false;
+			}
+			if(json.numeroIntento == 2 && json.text != "Respuesta Correcta"){
 				$("#modal").show();
 				$("#contenidoModalGlosa").append('<p id="pModal"  class="h3 font-size-medium font-color-grey-dark">'+json.glosa+'</p>');
 				$("#contenidoModalGlosa").append('<img id="imgModal" width=30% height=30% style="margin-left:75%;margin-top:-30px;" src="https://desarrolloadaptatin.blob.core.windows.net/feedbacksimg/PataFeedBack_00005.png">');
@@ -503,6 +507,9 @@
 			$("#modal").hide();
 			$("#iFrameEjercicio").attr("src","ejercicioPrueba/ejercicio_ejemplo.html");
 		});
+		function cerrarCorrecta(){
+			$("#iFrameEjercicio").attr("src","ejercicioPrueba/ejercicio_ejemplo.html");		
+		}
 	</script>
 	<script src="scripts/libs/jquery.fancybox.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">

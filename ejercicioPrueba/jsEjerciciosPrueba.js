@@ -1,5 +1,6 @@
 var numeroIntento = 1;
 var hiddenParent = window.parent.parent.varHidden; //Comunicacón con frame para resolver ejercicio
+var hiddenParentFlagCerrarCorrecta = window.parent.parent.flagCerrarCorrecta; //Comunicacón con frame para resolver ejercicio
 function enviar(){
 	$(".imgFeed").attr("src","https://desarrolloadaptatin.blob.core.windows.net/feedbacksimg/PataFeedBack_00004.png");	
 	var patron = /([0-9])/g;
@@ -32,7 +33,6 @@ function enviar(){
 
 	//Oculta btn Respondar para no enviar otra petición
     $("#imagenBotonRespuesta").css("visibility","hidden");
-	
 	if($("#spanFeedBack").text() == "Respuesta Correcta"){
 		$(".imgFeed").attr("src","https://desarrolloadaptatin.blob.core.windows.net/feedbacksimg/PataFeedBack_00002.png");	
 		//EJERCICIO CORRECTO
@@ -80,13 +80,13 @@ function enviar(){
 		}*/
 		
 	}
-	var envioIntento = JSON.stringify({ "numeroIntento":numeroIntento, "glosa": glosa });
+	var envioIntento = JSON.stringify({ "numeroIntento":numeroIntento, "glosa": glosa, "text": $("#spanFeedBack").text() });
 	
 	/*----Comunicacion de frame a página padre----*/
 		$(hiddenParent).val(envioIntento).trigger('change');
 	/*--------------------------------------------*/
 	numeroIntento++;
-	$(':input').val('');
+	//$(':input').val('');
 }
 
 function validaNumero(elEvento){ 
@@ -162,7 +162,10 @@ function validaNumero(elEvento){
 	
 	function cerrarFeed(){
 		$("#divGeneralFeed").hide();
-		$("#imagenBotonRespuesta").css("visibility","visible");			
+		$("#imagenBotonRespuesta").css("visibility","visible");	
+		if($("#spanFeedBack").text() == "Respuesta Correcta"){
+			$(hiddenParentFlagCerrarCorrecta).val("flag").trigger('change');
+		}		
 	}
 	
 	function cerrarFeedGlosa(){
@@ -170,7 +173,7 @@ function validaNumero(elEvento){
 	}
 	
 	function siguiente(){
-		alert("Aquí falta ver que sigue");	
+
 	}
 	
 	function sgteGlosa(){
@@ -179,7 +182,7 @@ function validaNumero(elEvento){
 
 /*---------VALIDACIÓN INGRESO A EJERCICIO--------*/
 
-	/*document.addEventListener('contextmenu', event => event.preventDefault());
+	document.addEventListener('contextmenu', event => event.preventDefault());
 
 	$(document).keydown(function(event){ // previene f12
 			if(event.keyCode==123){
@@ -222,7 +225,7 @@ function validaNumero(elEvento){
 				return false;  //previene escape(Opera)
 			}
 	});	
-		*/
+		
 /*---------------FIN VALIDACIÓN INGRESO  ---------------------*/	
 
 var footer = $("#imagenBotonRespuesta").parent();
@@ -252,25 +255,6 @@ $( document ).ready(function() {
     $(".glyphicon-remove-circle").css("font-size","x-large");
 	$("body").css("height","551px");
 	$("body").css("width","980px");
-		
-	/*$.ajax({
-		url: "http://192.168.10.221:9000/imagenesFeedBacksAzure",		
-		type: "GET",
-		contentType: "text/json",				
-		success : function(result) {
-		//	console.log(result);			
-			var json = JSON.parse(result);
-			var html = "";				
-			var ran = Math.floor((Math.random() *  json.entries.length) + 1);		
-	
-			$(".imgFeed").attr("src","https://desarrolloadaptatin.blob.core.windows.net/feedbacksimg/"+json.entries[ran-1].name);			
-		},
-		}).fail( function(err) {						
-			console.log(err);
-			$(err).each(function(i){							
-				console.log(err.responseText);							
-		});
-	});	*/
 	$("#divCreacionHtml").css("width","960px");
 	$("#divCreacionHtml").css("height","541px");
 	
@@ -314,7 +298,6 @@ $( document ).ready(function() {
 
 function cambio(elemento){
 	numeroIntento = $(elemento).val();
-	console.log("entre a hijo valor de intento set "+numeroIntento);
 }
 
 function selInput(){

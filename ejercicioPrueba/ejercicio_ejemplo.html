@@ -2,7 +2,7 @@
 <link rel='stylesheet' href='cssGeneral.css'>
 <meta charset='UTF-8'>
 <link rel='stylesheet' href='fontsLarke.css'>
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='../scripts/libs/jquery-1.7.2.js'></script>
 <script>
     $(document).ready(function() {
         $('div').removeAttr('onclick');
@@ -35,8 +35,8 @@
             <input class="grupoRdo" name="grupoRdo1" type="radio" id="ochocientos" value="ochocientos">
             <label class="labelGrupoRdo" for="ochocientos" style="margin-left:3px;">Ochocientos</label>
             <br>
-            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ocho  mil" value="ocho  mil">
-            <label class="labelGrupoRdo" for="ocho  mil" style="margin-left:3px;">Ocho mil</label>
+            <input class="grupoRdo" name="grupoRdo1" type="radio" id="ocho mil" value="ocho mil">
+            <label class="labelGrupoRdo" for="ocho mil" style="margin-left:3px;">Ocho mil</label>
             <br>
         </div>
     </div>
@@ -60,7 +60,7 @@
     var idEjercicio = 040101010200006;
 
     function responder() {
-        if ($("input[name=grupoRdo1]:checked").val() == "ochocientos") {
+        if ($("input[name='grupoRdo1']:checked").val() == "ochocientos") {
             respGeneral = 1;
             RespNeg = 0;
         } else {
@@ -68,21 +68,21 @@
         }
         if (RespNeg != 0) {
             rspMalas++;
-            if ($("input[name=grupoRdo1]:checked").val() == "ocho") {
+            if ($("input[name='grupoRdo1']:checked").val() == "ocho") {
                 $("#divGeneralFeed").show();
                 errFre = "0401010102";
                 $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
                 rspSinFeedBack = 1;
                 return false;
             }
-            if ($("input[name=grupoRdo1]:checked").val() == "ochenta") {
+            if ($("input[name='grupoRdo1']:checked").val() == "ochenta") {
                 $("#divGeneralFeed").show();
                 errFre = "0401010102";
                 $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
                 rspSinFeedBack = 1;
                 return false;
             }
-            if ($("input[name=grupoRdo1]:checked").val() == "ocho  mil") {
+            if ($("input[name='grupoRdo1']:checked").val() == "ocho mil") {
                 $("#divGeneralFeed").show();
                 errFre = "0401010102";
                 $("#spanFeedBack").text("Cuidado,  8 está ubicada en la posición de las centenas.");
