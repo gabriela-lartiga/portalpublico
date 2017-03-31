@@ -48,6 +48,7 @@ var abreModulo = "";
             $(this).hide();
 
         }if($(this).attr("title") == "Ingresar"){
+            $(this).attr("href","http://cursos.adaptativamente.cl");
 
         }                      
     });
