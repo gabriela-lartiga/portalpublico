@@ -35,8 +35,8 @@ var abreModulo = "";
 
     $(".primary-nav").children().each(function(){
         if($(this).attr("title") == "Para profesores"){
-            $(this).hide();
-            /*$(this).attr("href","para-profesores.html");*/
+            /*$(this).hide();*/
+            $(this).attr("href","para-profesores.html");
 
         }if($(this).attr("title") == "Para estudiantes"){
             $(this).attr("href","para-estudiantes.html");   
