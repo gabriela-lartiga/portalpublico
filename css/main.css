@@ -951,7 +951,8 @@ code {
 .gridle-gr-3 {
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
-    max-width: 25%
+    max-width: 25%;
+    padding-right: 2.5%
 }
 .gridle-push-3 {
     left: 25%;
@@ -975,7 +976,8 @@ code {
 .gridle-gr-4 {
     -ms-flex-preferred-size: 33.3333333333%;
     flex-basis: 33.3333333333%;
-    max-width: 33.3333333333%
+    max-width: 33.3333333333%;
+    padding-right: 5%;
 }
 .gridle-push-4 {
     left: 33.3333333333%;
