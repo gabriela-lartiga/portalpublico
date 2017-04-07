@@ -1,6 +1,6 @@
 'use strict';
 
-var c6a536685738426f954a5401c6b75fc0 = {};
+var ef023d69e9524cb7b15308d02de8c242 = {};
 
 lm.AddLoadEvent(function()
 {
@@ -252,11 +252,11 @@ var docStr = '{\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0,"y":-0.852854,"z":0}],\
+"val":[{"x":0,"y":-0.432172,"z":0}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0.339498,"y":0.339498,"z":0.339498}],\
+"val":[{"x":0.339498,"y":0.449362,"z":0.339498}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "name":"03",\
 "origin":{"x":0,"y":0},\
@@ -279,11 +279,11 @@ var docStr = '{\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
 "when":[0,21],\
-"val":[{"x":0.237502,"y":0.205116,"z":0},{"x":0.107956,"y":0.205116,"z":0}],\
+"val":[{"x":0.237502,"y":0.205116,"z":0},{"x":-0.005305,"y":0.205116,"z":0}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
 "when":[0,21],\
-"val":[{"x":0.771977,"y":0.771977,"z":0.771977},{"x":0.771977,"y":0.771977,"z":0.771977}],\
+"val":[{"x":0.917888,"y":0.917888,"z":0.917888},{"x":0.930173,"y":0.930173,"z":0.930173}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "rotationZ":{"_lmType_":"AnimVal",\
 "when":[0,21],\
@@ -359,11 +359,11 @@ var docStr = '{\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0,"y":0.077484,"z":0}],\
+"val":[{"x":-0.102745,"y":0.003508,"z":0}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0.589027,"y":0.589027,"z":0.589027}],\
+"val":[{"x":0.555084,"y":0.555084,"z":0.555084}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "name":"04",\
 "origin":{"x":0,"y":0},\
@@ -534,11 +534,11 @@ var docStr = '{\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0,"y":-0.031779,"z":0}],\
+"val":[{"x":0,"y":-0.0318,"z":0}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
 "when":[0],\
-"val":[{"x":0.30387,"y":0.30387,"z":0.30387}],\
+"val":[{"x":0.3039,"y":0.3039,"z":0.3039}],\
 "interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "name":"06",\
 "origin":{"x":0,"y":0},\
@@ -601,25 +601,25 @@ var docStr = '{\
 "points":[{"x":-1.994037,"y":0.520502},{"x":1.994037,"y":0.520502},{"x":1.994037,"y":-0.520502},{"x":-1.994037,"y":-0.520502}]},\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
-"when":[0,24],\
-"val":[{"x":0,"y":-0.136941,"z":0},{"x":0,"y":-0.256764,"z":0}],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,24,27],\
+"val":[{"x":0,"y":-0.136941,"z":0},{"x":0,"y":-0.256764,"z":0},{"x":0,"y":-0.26232,"z":0}],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
-"when":[0,24],\
-"val":[{"x":0.664406,"y":0.664406,"z":0.664406},{"x":0.664406,"y":0.664406,"z":0.664406}],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,24,27],\
+"val":[{"x":0.664406,"y":0.664406,"z":0.664406},{"x":0.664406,"y":0.664406,"z":0.664406},{"x":0.664406,"y":0.664406,"z":0.664406}],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "rotationZ":{"_lmType_":"AnimVal",\
-"when":[0,24],\
-"val":[0,0],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,24,27],\
+"val":[0,0,0],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "blur":{"_lmType_":"AnimVal",\
-"when":[0,24],\
-"val":[0,0],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,24,27],\
+"val":[0,0,0],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "alpha":{"_lmType_":"AnimVal",\
-"when":[0,24],\
-"val":[1,1],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,24,27],\
+"val":[1,1,1],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "name":"07",\
 "origin":{"x":0,"y":0},\
 "parentBone":-3,\
@@ -708,25 +708,25 @@ var docStr = '{\
 "pixelHeight":534},\
 {"_lmType_":"ImageLayer",\
 "translation":{"_lmType_":"AnimVec3",\
-"when":[0,50,158],\
-"val":[{"x":0.055831,"y":0.312653,"z":0},{"x":0.161286,"y":0.312653,"z":0},{"x":-0.111662,"y":0.312653,"z":0}],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,50,113,158],\
+"val":[{"x":0.055831,"y":0.312653,"z":0},{"x":0.161286,"y":0.312653,"z":0},{"x":-0.126577,"y":0.312653,"z":0},{"x":-0.111662,"y":0.312653,"z":0}],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "scale":{"_lmType_":"AnimVec3",\
-"when":[0,50,158],\
-"val":[{"x":0.627246,"y":0.627246,"z":0.627246},{"x":0.627246,"y":0.627246,"z":0.627246},{"x":0.627246,"y":0.627246,"z":0.627246}],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,50,113,158],\
+"val":[{"x":0.627246,"y":0.627246,"z":0.627246},{"x":0.627246,"y":0.627246,"z":0.627246},{"x":0.627246,"y":0.627246,"z":0.627246},{"x":0.627246,"y":0.627246,"z":0.627246}],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "rotationZ":{"_lmType_":"AnimVal",\
-"when":[0,50,158],\
-"val":[0.112897,0.112897,0.112897],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,50,113,158],\
+"val":[0.112897,0.112897,0.112897,0.112897],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "blur":{"_lmType_":"AnimVal",\
-"when":[0,50,158],\
-"val":[0,0,0],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,50,113,158],\
+"val":[0,0,0,0],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "alpha":{"_lmType_":"AnimVal",\
-"when":[0,50,158],\
-"val":[1,1,1],\
-"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
+"when":[0,50,113,158],\
+"val":[1,1,1,1],\
+"interp":[{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5},{"mode":1,"hold":0,"val1":0.1,"val2":0.5}]},\
 "name":"08B",\
 "origin":{"x":0,"y":0},\
 "parentBone":-3,\
@@ -820,8 +820,8 @@ var docStr = '{\
 ]}\
 ]}';
 
-	c6a536685738426f954a5401c6b75fc0.doc = lm.Unserialize(docStr);
-	c6a536685738426f954a5401c6b75fc0.view = new MohoView("c6a536685738426f954a5401c6b75fc0_canvas");
-	c6a536685738426f954a5401c6b75fc0.view.SetDocument(c6a536685738426f954a5401c6b75fc0.doc);
-	CreateMohoPlaybackControls("c6a536685738426f954a5401c6b75fc0", c6a536685738426f954a5401c6b75fc0.view);
+	ef023d69e9524cb7b15308d02de8c242.doc = lm.Unserialize(docStr);
+	ef023d69e9524cb7b15308d02de8c242.view = new MohoView("ef023d69e9524cb7b15308d02de8c242_canvas");
+	ef023d69e9524cb7b15308d02de8c242.view.SetDocument(ef023d69e9524cb7b15308d02de8c242.doc);
+	CreateMohoPlaybackControls("ef023d69e9524cb7b15308d02de8c242", ef023d69e9524cb7b15308d02de8c242.view);
 });
